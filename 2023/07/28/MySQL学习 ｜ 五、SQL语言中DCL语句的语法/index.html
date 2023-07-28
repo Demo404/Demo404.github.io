@@ -9,7 +9,7 @@
     
     <title>
         
-            关于 |
+            MySQL学习 ｜ 五、SQL语言中DCL语句的语法 |
         
         何进磊的小窝
     </title>
@@ -143,29 +143,162 @@
             <div class="main-content">
 
                 
-                    
-<div class="fade-in-down-animation">
-    <div class="page-template-container">
-        
-        
-        <div class="page-template-content keep-markdown-body">
-            
-                <p>我是何进磊</p>
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">MySQL学习 ｜ 五、SQL语言中DCL语句的语法</span>
+            </div>
 
             
-        </div>
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">何进磊</span>
+                            
+                                <span class="author-label">后端攻城狮</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
         
-            <div class="page-template-comments">
-                
-<div class="comments-container">
-    <div id="comments-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments"></i>&nbsp;评论
-    </div>
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-07-28 16:17:39</span>
+        <span class="mobile">2023-07-28 16:17</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-07-28 16:55:28</span>
+    </span>
+    
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>242 字</span>
+        </span>
+    
+    
     
 </div>
 
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <p><strong>DCL：数据控制语言，用来管理数据库用户、数据库访问权限。</strong></p>
+<h4 id="一、DCL管理用户"><a href="#一、DCL管理用户" class="headerlink" title="一、DCL管理用户"></a><strong>一、DCL管理用户</strong></h4><p>创建用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CRAETE USER &#x27;用户名&#x27;@&#x27;主机&#x27; IDENTIFIED BY &#x27;密码&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>主机:  localhost:当前主机；%:任意机器。‍‍‍‍‍‍</p>
+<p>查询用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM USER;</span><br></pre></td></tr></table></figure>
+
+<p>修改用户密码  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;用户名&#x27;@&#x27;主机&#x27; IDENTIFIED WITH mysql_native_password &#x27;密码&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>删除用户  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP USER &#x27;用户名&#x27;@&#x27;主机&#x27;;</span><br></pre></td></tr></table></figure>
+
+  </br>
+
+<h4 id="二、DCL权限控制‍‍"><a href="#二、DCL权限控制‍‍" class="headerlink" title="二、DCL权限控制‍‍"></a><strong>二、DCL权限控制</strong>‍‍</h4><p>mysql中常用的权限列表‍‍‍‍‍‍‍</p>
+<table>
+<thead>
+<tr>
+<th>权限</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ALL, ALL PRIVILEGES</td>
+<td>所有权限</td>
+</tr>
+<tr>
+<td>SELECT</td>
+<td>查询数据</td>
+</tr>
+<tr>
+<td>INSERT</td>
+<td>插入数据</td>
+</tr>
+<tr>
+<td>UPDATE</td>
+<td>修改数据</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>删除数据</td>
+</tr>
+<tr>
+<td>ALTER</td>
+<td>修改表</td>
+</tr>
+<tr>
+<td>DROP</td>
+<td>删除数据库&#x2F;表&#x2F;视图</td>
+</tr>
+<tr>
+<td>CREATE</td>
+<td>创建数据库&#x2F;表</td>
+</tr>
+</tbody></table>
+<p>查询权限</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW GRANTS FOR &#x27;用户名&#x27;@&#x27;主机&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>授予权限  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT 权限列表 ON 数据库.表名 TO &#x27;用户名&#x27;@&#x27;主机&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>撤销权限  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE 权限列表 ON 数据库.表名 FROM &#x27;用户名&#x27;@&#x27;主机&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>‍‍‍</p>
+
             </div>
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/07/28/MySQL%E5%AD%A6%E4%B9%A0%20%EF%BD%9C%20%E5%9B%9B%E3%80%81SQL%E8%AF%AD%E8%A8%80%E4%B8%ADDQL%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%AF%AD%E6%B3%95/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">MySQL学习 ｜ 四、SQL语言中DQL语句的语法</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
         
     </div>
 </div>
@@ -211,6 +344,19 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -284,6 +430,12 @@
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/post-helper.js"></script>
+
+        
+        
     
 </div>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -31,11 +31,11 @@
 
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
-    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh","path":"search.json"}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
     KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["后端攻城狮"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.1"}
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
-    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
-    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -98,14 +98,6 @@
                             </a>
                         </li>
                     
-                        <li class="menu-item">
-                            <a class=""
-                               href="/about"
-                            >
-                                关于
-                            </a>
-                        </li>
-                    
                     
                 </ul>
             </div>
@@ -134,11 +126,6 @@
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        target="_blank" rel="noopener" href="http://www.tanainaide.uk:1107">CHAT GPT</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/about">关于</a>
                 </li>
             
         </ul>
@@ -189,7 +176,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-07-27 22:39:58</span>
+        <span class="pc">2023-07-28 16:55:28</span>
     </span>
     
     
@@ -198,7 +185,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1k 字</span>
         </span>
     
     
@@ -215,12 +202,12 @@
 
                 <h4 id="一、数据库相关的概念"><a href="#一、数据库相关的概念" class="headerlink" title="一、数据库相关的概念"></a><strong>一、数据库相关的概念</strong></h4><p>数据库（DB）：存储数据的仓库，数据是有组织的进行存储。</p>
 <p>数据库管理系统（DBMS）：操作和管理数据库的大型软件。‍‍‍‍‍‍‍</p>
-<p>SQL：操作关系型数据库的编程语言，定义了一套操作关系型数据库的统一标准。</p>
-<p>​		</p>
+<p>SQL：操作关系型数据库的编程语言，定义了一套操作关系型数据库的统一标准。  </p>
+<p>​		  </p>
 <h4 id="二、主流的数据库管理系统"><a href="#二、主流的数据库管理系统" class="headerlink" title="二、主流的数据库管理系统"></a><strong>二、主流的数据库管理系统</strong></h4><p>1、Oracle：oracle公司研发，大型且收费。</p>
-<p>2、MySQL：小型，有免费游收费。‍</p>
+<p>2、MySQL：小型，有免费有收费。‍</p>
 <p>3、PostgreSQL：中小型数据库，免费。</p>
-<p>4、SQLite：嵌入性数据库，安卓系统采用SQLite。  \</p>
+<p>4、SQLite：嵌入性数据库，安卓系统采用SQLite。</p>
 <p>. . . . . .‍‍‍</p>
 <p>​		</p>
 <h4 id="三、MySQL的安装和启动‍‍‍"><a href="#三、MySQL的安装和启动‍‍‍" class="headerlink" title="三、MySQL的安装和启动‍‍‍"></a><strong>三、MySQL的安装和启动</strong>‍‍‍</h4><h5 id="版本："><a href="#版本：" class="headerlink" title="版本："></a>版本：</h5><ul>
@@ -231,7 +218,7 @@
 <p>收费，可试用，MySQL提供技术支持。</p>
 </li>
 </ul>
-<h6 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h6><p><a class="link"   target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/" >https://dev.mysql.com/downloads/<i class="fas fa-external-link-alt"></i></a> 或者 <a class="link"   target="_blank" rel="noopener" href="https://www.mysql.com/" >https://www.mysql.com/<i class="fas fa-external-link-alt"></i></a> 依次点击如下进入下载列表页。</p>
+<h6 id="下载地址："><a href="#下载地址：" class="headerlink" title="下载地址："></a>下载地址：</h6><p><a class="link"   target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/" >https://dev.mysql.com/downloads/<i class="fas fa-external-link-alt"></i></a> 或者 <a class="link"   target="_blank" rel="noopener" href="https://www.mysql.com/" >https://www.mysql.com/<i class="fas fa-external-link-alt"></i></a> 依次如下点击进行下载。</p>
 <p><img src="http://rygkvvhh1.hd-bkt.clouddn.com/Blog/MySQL%E5%AD%A6%E4%B9%A0%E4%B8%80/%E4%B8%8B%E8%BD%BD%E6%8C%89%E9%92%AE.jpeg?e=1690468324&token=w2Ck1K8J7F3OPBNX_GiYGMLReW7R0l5CDG2QUNPh:iAo6vdQ_978yosZckapZZMKMy6w=" alt="http://rygkvvhh1.hd-bkt.clouddn.com/Blog/MySQL%E5%AD%A6%E4%B9%A0%E4%B8%80/%E4%B8%8B%E8%BD%BD%E6%8C%89%E9%92%AE.jpeg?e=1690468324&amp;token=w2Ck1K8J7F3OPBNX_GiYGMLReW7R0l5CDG2QUNPh:iAo6vdQ_978yosZckapZZMKMy6w="></p>
 <p>下拉页面找到download</p>
 <p><img src="http://rygkvvhh1.hd-bkt.clouddn.com/Blog/MySQL%E5%AD%A6%E4%B9%A0%E4%B8%80/%E4%B8%8B%E6%BB%91%E5%88%B0%E8%BF%99.jpg?e=1690468193&token=w2Ck1K8J7F3OPBNX_GiYGMLReW7R0l5CDG2QUNPh:fp3gxEeu7DPFbCob1ObFXe_w5Wc=" alt="http://rygkvvhh1.hd-bkt.clouddn.com/Blog/MySQL%E5%AD%A6%E4%B9%A0%E4%B8%80/%E4%B8%8B%E8%BD%BD%E6%8C%89%E9%92%AE.jpeg?e=1690468265&amp;token=w2Ck1K8J7F3OPBNX_GiYGMLReW7R0l5CDG2QUNPh:kXAMjXltrPzX0yTS0c97bes7y6c="></p>
@@ -287,7 +274,7 @@
 
 <p>​		</p>
 <h4 id="四、MySQL的数据模型"><a href="#四、MySQL的数据模型" class="headerlink" title="四、MySQL的数据模型"></a>四、MySQL的数据模型</h4><h5 id="关系型数据库（RDBMS）"><a href="#关系型数据库（RDBMS）" class="headerlink" title="关系型数据库（RDBMS）"></a>关系型数据库（RDBMS）</h5><p>概念：建立在关系型模型基础上，由多张相互连接的二维表组成的数据库。</p>
-<p>特点：<br>    1、使用表结构存储。格式统一便于维护。<br>    2、使用SQL语言操作，标准统一使用方便。</p>
+<p>特点：<br>&emsp;&emsp; - 1、使用表结构存储。格式统一便于维护。<br>&emsp;&emsp; - 2、使用SQL语言操作，标准统一使用方便。</p>
 <p><img src="http://rygkvvhh1.hd-bkt.clouddn.com/Blog/MySQL%E5%AD%A6%E4%B9%A0%E4%B8%80/%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B-%E4%B8%A4%E8%A1%A8%E5%85%B3%E7%B3%BB.png?e=1690468783&token=w2Ck1K8J7F3OPBNX_GiYGMLReW7R0l5CDG2QUNPh:t-Vii9Y0MNOAsNm4RBNWX7R9Qm8=" alt="http://rygkvvhh1.hd-bkt.clouddn.com/Blog/MySQL%E5%AD%A6%E4%B9%A0%E4%B8%80/%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B-%E4%B8%A4%E8%A1%A8%E5%85%B3%E7%B3%BB.png?e=1690468783&amp;token=w2Ck1K8J7F3OPBNX_GiYGMLReW7R0l5CDG2QUNPh:t-Vii9Y0MNOAsNm4RBNWX7R9Qm8="></p>
 
             </div>
@@ -296,6 +283,26 @@
 
             
 
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2023/07/28/MySQL%E5%AD%A6%E4%B9%A0%20%EF%BD%9C%20%E4%BA%8C%E3%80%81SQL%E5%88%86%E7%B1%BB%E4%BB%A5%E5%8F%8ADDL%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%AF%AD%E6%B3%95/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">MySQL学习 ｜ 二、SQL分类以及DDL语句的语法</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                </div>
             
 
             
@@ -328,7 +335,7 @@
         </div>
         
         <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
         </div>
         
             <div class="icp-info info-item">
