@@ -32,7 +32,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["后端攻城狮"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["后端攻城狮"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -189,7 +189,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-08-02 19:48:25</span>
+        <span class="pc">2023-08-25 15:01:58</span>
     </span>
     
     
@@ -213,7 +213,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>873 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>872 字</span>
         </span>
     
     
@@ -266,25 +266,25 @@
 </tr>
 </tbody></table>
 <p>1、CONCAT函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT CONCAT(&#x27;hello&#x27;, &#x27;mysql&#x27;);</span><br><span class="line">输出：hello mysql</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT CONCAT(&#x27;hello&#x27;, &#x27;mysql&#x27;);<br>输出：hello mysql<br></code></pre></td></tr></table></figure>
 
 <p>2、LOWER函数‍‍</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT LOWER(&#x27;HELLO&#x27;);</span><br><span class="line">输出：hello</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT LOWER(&#x27;HELLO&#x27;);<br>输出：hello<br></code></pre></td></tr></table></figure>
 
 <p>3、UPPER函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT UPPER(&#x27;hello&#x27;);</span><br><span class="line">输出：HELLO</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT UPPER(&#x27;hello&#x27;);<br>输出：HELLO<br></code></pre></td></tr></table></figure>
 
 <p>4、LPAD函数  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT LPAD(&#x27;01&#x27;, 5, &#x27;-&#x27;);</span><br><span class="line">输出：---01</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT LPAD(&#x27;01&#x27;, 5, &#x27;-&#x27;);<br>输出：---01<br></code></pre></td></tr></table></figure>
 
 <p>5、RPAD函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT RPAD(&#x27;01&#x27;, 5, &#x27;-&#x27;);</span><br><span class="line">输出：01---</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT RPAD(&#x27;01&#x27;, 5, &#x27;-&#x27;);<br>输出：01---<br></code></pre></td></tr></table></figure>
 
 <p>6、TRIM函数（只能去除两端的空格，不能去除中间的空格）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT TRIM(&#x27; Hello Trim &#x27;);</span><br><span class="line">输出：Hello Trim</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT TRIM(&#x27; Hello Trim &#x27;);<br>输出：Hello Trim<br></code></pre></td></tr></table></figure>
 
 <p>7、SUBSTRING</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT SUBSTRING(&#x27;Hello MySQL&#x27;, 1, 5);</span><br><span class="line">输出：Hello</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT SUBSTRING(&#x27;Hello MySQL&#x27;, 1, 5);<br>输出：Hello<br></code></pre></td></tr></table></figure>
 
   </br>
 
@@ -317,19 +317,19 @@
 </tr>
 </tbody></table>
 <p>1、CEIL函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT CEIL(1.6);    </span><br><span class="line">输出：1</span><br><span class="line"></span><br><span class="line">SELECT CEIL(1.1);    </span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT CEIL(1.6);    <br>输出：1<br><br>SELECT CEIL(1.1);    <br>输出：1<br></code></pre></td></tr></table></figure>
 
 <p>2、FLOOR函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT FLOOR(1.6);    </span><br><span class="line">输出：2</span><br><span class="line"></span><br><span class="line">SELECT FLOOR(1.1);   </span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT FLOOR(1.6);    <br>输出：2<br><br>SELECT FLOOR(1.1);   <br>输出：2<br></code></pre></td></tr></table></figure>
 
 <p>3、MOD函数(求余数)  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT MOD(3, 4);   </span><br><span class="line">输出：3</span><br><span class="line"></span><br><span class="line">SELECT MOD(6, 4);    </span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT MOD(3, 4);   <br>输出：3<br><br>SELECT MOD(6, 4);    <br>输出：2<br></code></pre></td></tr></table></figure>
 
 <p>4、RAND  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT RAND();       </span><br><span class="line">输出：0～1之间的随机数</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT RAND();       <br>输出：0～1之间的随机数<br></code></pre></td></tr></table></figure>
 
 <p>5、ROUND‍</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT ROUND(2.34, 2);     </span><br><span class="line">输出：2.34</span><br><span class="line"></span><br><span class="line">SELECT ROUND(1.236, 2);    </span><br><span class="line">输出：1.24</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT ROUND(2.34, 2);     <br>输出：2.34<br><br>SELECT ROUND(1.236, 2);    <br>输出：1.24<br></code></pre></td></tr></table></figure>
 
   </br>
 
@@ -374,22 +374,22 @@
 </tr>
 </tbody></table>
 <p>1、CURDATE</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT CURDATE();    </span><br><span class="line">输出：2023-07-13</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT CURDATE();    <br>输出：2023-07-13<br></code></pre></td></tr></table></figure>
 
 <p>2、CURTIME</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT CURTIME();    </span><br><span class="line">输出：08:37:26</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT CURTIME();    <br>输出：08:37:26<br></code></pre></td></tr></table></figure>
 
 <p>3、NOW</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT NOW();        </span><br><span class="line">输出：2023-07-13 08:38:33</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT NOW();        <br>输出：2023-07-13 08:38:33<br></code></pre></td></tr></table></figure>
 
 <p>4、YEAR、MONTH、DAY</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT YEAR(NOW());      </span><br><span class="line">输出：2023</span><br><span class="line"></span><br><span class="line">SELECT YEAR(MONTH());    </span><br><span class="line">输出：7</span><br><span class="line"></span><br><span class="line">SELECT YEAR(DAY());      </span><br><span class="line">输出：13</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT YEAR(NOW());      <br>输出：2023<br><br>SELECT YEAR(MONTH());    <br>输出：7<br><br>SELECT YEAR(DAY());      <br>输出：13<br></code></pre></td></tr></table></figure>
 
 <p>5、DATE_ADD</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATE_ADD(NOW(), INTERVAL 70 DAY);</span><br><span class="line">输出：2023-09-21 08:40:13</span><br><span class="line"></span><br><span class="line">SELECT DATE_ADD(NOW(), INTERVAL -10 MONTH);</span><br><span class="line">输出：2022-09-13 08:40:13</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT DATE_ADD(NOW(), INTERVAL 70 DAY);<br>输出：2023-09-21 08:40:13<br><br>SELECT DATE_ADD(NOW(), INTERVAL -10 MONTH);<br>输出：2022-09-13 08:40:13<br></code></pre></td></tr></table></figure>
 
 <p>6、DATEDIFF(第一个时间减第二个时间)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATEDIFF(&#x27;2023-07-10&#x27;, &#x27;2023-07-01&#x27;);</span><br><span class="line">输出：9</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT DATEDIFF(&#x27;2023-07-10&#x27;, &#x27;2023-07-01&#x27;);<br>输出：9<br></code></pre></td></tr></table></figure>
 
   </br>
 
@@ -418,13 +418,13 @@
 </tr>
 </tbody></table>
 <p>1、IF</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT IF(true, &#x27;OK&#x27;, &#x27;Error&#x27;);    </span><br><span class="line">输出：OK</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT IF(true, &#x27;OK&#x27;, &#x27;Error&#x27;);    <br>输出：OK<br></code></pre></td></tr></table></figure>
 
 <p>2、IFNULL‍</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT IFNULL(&#x27;OK&#x27;, &#x27;Default&#x27;);    </span><br><span class="line">输出：OK</span><br><span class="line"></span><br><span class="line">SELECT IFNULL(&#x27;&#x27;, &#x27;Default&#x27;);      </span><br><span class="line">输出：</span><br><span class="line"></span><br><span class="line">SELECT IFNULL(NULL, &#x27;Default&#x27;);    </span><br><span class="line">输出：Default</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT IFNULL(&#x27;OK&#x27;, &#x27;Default&#x27;);    <br>输出：OK<br><br>SELECT IFNULL(&#x27;&#x27;, &#x27;Default&#x27;);      <br>输出：<br><br>SELECT IFNULL(NULL, &#x27;Default&#x27;);    <br>输出：Default<br></code></pre></td></tr></table></figure>
 
 <p>3、CASE WHEN THEN ELSE END</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">查询员工姓名和城市，如果城市是上海和北京返回一线城市，其他返回二线城市</span><br><span class="line"></span><br><span class="line">SELECT </span><br><span class="line">	name, </span><br><span class="line">	CASE work_address WHEN &#x27;上海&#x27; THEN &#x27;一线&#x27; WHEN &#x27;北京&#x27; THEN &#x27;一线&#x27; ELSE &#x27;二线&#x27; END </span><br><span class="line">FROM worker;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">查询员工姓名和城市，如果城市是上海和北京返回一线城市，其他返回二线城市<br><br>SELECT <br>	name, <br>	CASE work_address WHEN &#x27;上海&#x27; THEN &#x27;一线&#x27; WHEN &#x27;北京&#x27; THEN &#x27;一线&#x27; ELSE &#x27;二线&#x27; END <br>FROM worker;<br></code></pre></td></tr></table></figure>
             </div>
 
             
@@ -611,6 +611,14 @@
 
 
 
+    
+<script src="/js/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
 
 
 

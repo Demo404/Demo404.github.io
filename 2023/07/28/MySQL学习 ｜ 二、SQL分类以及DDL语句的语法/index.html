@@ -32,7 +32,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["后端攻城狮"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["后端攻城狮"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -189,7 +189,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-08-02 19:48:25</span>
+        <span class="pc">2023-08-25 15:01:58</span>
     </span>
     
     
@@ -228,49 +228,49 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h4 id="一、SQL的分类‍"><a href="#一、SQL的分类‍" class="headerlink" title="一、SQL的分类‍"></a><strong>一、SQL的分类</strong>‍</h4><p><strong>DDL</strong>（Date Definiition Lanhuage）：数据定义语言，用来定义数据库对象（数据库、表、字段等）。<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table 表名;</span><br></pre></td></tr></table></figure></p>
-<p><strong>DML</strong>（Data Manipulation Language）：数据操作语言，用来对数据库中的数据进行增删改查。<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 字段名 类型(长度);</span><br></pre></td></tr></table></figure></p>
+                <h4 id="一、SQL的分类‍"><a href="#一、SQL的分类‍" class="headerlink" title="一、SQL的分类‍"></a><strong>一、SQL的分类</strong>‍</h4><p><strong>DDL</strong>（Date Definiition Lanhuage）：数据定义语言，用来定义数据库对象（数据库、表、字段等）。<br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">create table 表名;<br></code></pre></td></tr></table></figure></p>
+<p><strong>DML</strong>（Data Manipulation Language）：数据操作语言，用来对数据库中的数据进行增删改查。<br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">alter table 表名 add 字段名 类型(长度);<br></code></pre></td></tr></table></figure></p>
 <p><strong>DQL</strong>（Data Query Language）：数据查询语言，用来查询数据库中表里面的数据。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">select * from 表名;<br></code></pre></td></tr></table></figure>
 
 <p><strong>DCL</strong>（Data Control Language）：数据控住语言，用来创建用户，控制用户对数据库的访问权限。‍</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &#x27;XXX&#x27;@&#x27;%&#x27; identified by &#x27;XXX&#x27; with grant option;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">grant all privileges on *.* to &#x27;XXX&#x27;@&#x27;%&#x27; identified by &#x27;XXX&#x27; with grant option;<br></code></pre></td></tr></table></figure>
 
 </br>
 
 <h4 id="二、DDL在数据库上的操作"><a href="#二、DDL在数据库上的操作" class="headerlink" title="二、DDL在数据库上的操作"></a><strong>二、DDL在数据库上的操作</strong></h4><p>查询所有数据库: </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SHOW DATABASES;<br></code></pre></td></tr></table></figure>
 <p>查询当前数据库：  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASE();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SHOW DATABASE();<br></code></pre></td></tr></table></figure>
 <p> 创建数据库：  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE [IF NOT EXISTS] 库名 [DEFAULT CHARSET utf8mb4];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">CREATE DATABASE [IF NOT EXISTS] 库名 [DEFAULT CHARSET utf8mb4];<br></code></pre></td></tr></table></figure>
 <p> 删除数据库：‍‍‍‍‍‍‍‍</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE [IF NOT EXISTS] 库名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">DROP DATABASE [IF NOT EXISTS] 库名;<br></code></pre></td></tr></table></figure>
 <p> 使用数据库：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE 库名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">USE 库名;<br></code></pre></td></tr></table></figure>
 
 </br>
 
 <h4 id="三、DDL在表上操作"><a href="#三、DDL在表上操作" class="headerlink" title="三、DDL在表上操作"></a><strong>三、DDL在表上操作</strong></h4><p>查询当前数据库中的所有表：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW TABLES;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SHOW TABLES;<br></code></pre></td></tr></table></figure>
 <p>查询表结构（不会展示字段注释）：  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESC 表名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">DESC 表名;<br></code></pre></td></tr></table></figure>
 <p>查询表的创建语句：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW CREATE TABLE 表名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SHOW CREATE TABLE 表名;<br></code></pre></td></tr></table></figure>
 <p> 创建表：  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">    字段1 字段1类型 [comment 字段1注释],</span><br><span class="line">    字段2 字段2类型 [comment 字段2注释],</span><br><span class="line">    字段3 字段3类型 [comment 字段3注释],</span><br><span class="line">    ......</span><br><span class="line">    字段n 字段n类型 [comment 字段n注释]</span><br><span class="line">)[comment 表注释];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">create table 表名(<br>    字段1 字段1类型 [comment 字段1注释],<br>    字段2 字段2类型 [comment 字段2注释],<br>    字段3 字段3类型 [comment 字段3注释],<br>    ......<br>    字段n 字段n类型 [comment 字段n注释]<br>)[comment 表注释];<br></code></pre></td></tr></table></figure>
 <p> 添加字段：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 表名 ADD 字段名 类型(长度);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">ALTER TABLE 表名 ADD 字段名 类型(长度);<br></code></pre></td></tr></table></figure>
 <p> 修改字段的数据类型：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 表名 MODIFY 字段名 字段类型(长度);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">ALTER TABLE 表名 MODIFY 字段名 字段类型(长度);<br></code></pre></td></tr></table></figure>
 <p>修改字段的名称和类型：‍‍</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 表名 CHANGE 旧字段名 新字段名 字段类型(长度);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">ALTER TABLE 表名 CHANGE 旧字段名 新字段名 字段类型(长度);<br></code></pre></td></tr></table></figure>
 <p> 删除字段：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 表名 DROP 字段名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">ALTER TABLE 表名 DROP 字段名;<br></code></pre></td></tr></table></figure>
 <p> 修改表名称：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 表名 RENAME TO 新表名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">ALTER TABLE 表名 RENAME TO 新表名;<br></code></pre></td></tr></table></figure>
 <p>删除表：‍‍‍‍</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE [IF EXISTS] 表名;TRUNCATE TABLE 表名;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">DROP TABLE [IF EXISTS] 表名;TRUNCATE TABLE 表名;<br></code></pre></td></tr></table></figure>
 
 <p>DROP：物理删除表结构加数据。‍‍‍‍<br>TRUNCATE：物理删除表结构加数据后 重新创建表。</p>
 </br>
@@ -620,6 +620,14 @@
 
 
 
+    
+<script src="/js/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
 
 
 
