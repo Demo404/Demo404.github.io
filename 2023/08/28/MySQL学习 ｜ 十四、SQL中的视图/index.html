@@ -9,7 +9,7 @@
     
     <title>
         
-            MySQL学习 ｜ 六、SQL语言中函数 |
+            MySQL学习 ｜ 十四、SQL中的视图 |
         
         何进磊的小窝
     </title>
@@ -161,7 +161,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">MySQL学习 ｜ 六、SQL语言中函数</span>
+                <span class="title-hover-animation">MySQL学习 ｜ 十四、SQL中的视图</span>
             </div>
 
             
@@ -183,8 +183,8 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-08-01 21:03:24</span>
-        <span class="mobile">2023-08-01 21:03</span>
+        <span class="pc">2023-08-28 08:31:38</span>
+        <span class="mobile">2023-08-28 08:31</span>
     </span>
     
         <span class="article-update-date article-meta-item">
@@ -213,7 +213,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>872 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1k 字</span>
         </span>
     
     
@@ -232,203 +232,38 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <p><strong>函数：</strong>是指一段可以直接被另一段程序调用的程序或代码。</p>
-<h4 id="一、字符串函数"><a href="#一、字符串函数" class="headerlink" title="一、字符串函数"></a><strong>一、字符串函数</strong></h4><table>
-<thead>
-<tr>
-<th align="left">函数</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">CONCAT(S1, S2, …, Sn)</td>
-<td align="center">字符串拼接，将字符串S1，S2…Sn拼接成一个新字符串</td>
-</tr>
-<tr>
-<td align="left">LOWER(str)</td>
-<td align="center">将字符串str全部转为小写</td>
-</tr>
-<tr>
-<td align="left">UPPER(str)</td>
-<td align="center">将字符串str全部转为大写</td>
-</tr>
-<tr>
-<td align="left">LPAD(str, n, pad)</td>
-<td align="center">左填充，用字符串pad对str的左边进行填充，达到n个字段的长度</td>
-</tr>
-<tr>
-<td align="left">RPAD(str, n, pad)</td>
-<td align="center">右填充，用字符串pad对str的右边进行填充，达到n个字段的长度</td>
-</tr>
-<tr>
-<td align="left">TRIM(str)</td>
-<td align="center">去掉字符串头部和尾部的空格</td>
-</tr>
-<tr>
-<td align="left">SUBSTRING(str, start, len)</td>
-<td align="center">返回字符串str从start开始起的len个长度的字符串</td>
-</tr>
-</tbody></table>
-<p>1、CONCAT函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT CONCAT(&#x27;hello&#x27;, &#x27;mysql&#x27;);<br>输出：hello mysql<br></code></pre></td></tr></table></figure>
+                <h5 id="一、视图的基本介绍和语法"><a href="#一、视图的基本介绍和语法" class="headerlink" title="一、视图的基本介绍和语法"></a>一、视图的基本介绍和语法</h5><p><strong>定义</strong><br>视图(View): 是一种虚拟存在的表，视图中的数据并不是真实存在的，行和列数据来自定义视图的查询中使用的表，并且是在使用时图时动态生成。<br>通俗讲，视图只保存了查询数据的SQL，不保存查询结果，所以我们创建视图的时候主要工作就落在了创建这条SQL查询语句上。</p>
+<p><strong>语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql">创建视图<br>CRAETE [<span class="hljs-keyword">OR</span> REPLACE] <span class="hljs-keyword">VIEW</span> 视图名称[(列名列表)] <span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span>语句 [<span class="hljs-keyword">WITH</span> [<span class="hljs-keyword">CASCADED</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">LOCAL</span>] <span class="hljs-keyword">CHECK</span> OPTION];<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql">查看创建视图语句<br><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">VIEW</span> 视图名称;<br>查看视图数据<br><span class="hljs-keyword">SELECT</span> 字段列表 <span class="hljs-keyword">FROM</span> 视图名称 [<span class="hljs-keyword">WHERE</span> ...];<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql">修改视图<br>方式一：CRAETE [<span class="hljs-keyword">OR</span> REPLACE] <span class="hljs-keyword">VIEW</span> 视图名称[(列名列表)] <span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span>语句 [<span class="hljs-keyword">WITH</span> [<span class="hljs-keyword">CASCADED</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">LOCAL</span>] <span class="hljs-keyword">CHECK</span> OPTION];<br>视图二：<span class="hljs-keyword">ALTER</span> 视图名称[(列名列表)] <span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span>语句 [<span class="hljs-keyword">WITH</span> [<span class="hljs-keyword">CASCADED</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">LOCAL</span>] <span class="hljs-keyword">CHECK</span> OPTION];<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql">删除视图<br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">VIEW</span> [IF <span class="hljs-keyword">EXISTS</span>] 视图名称, [视图名称,]...<br></code></pre></td></tr></table></figure>
+</br>
 
-<p>2、LOWER函数‍‍</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT LOWER(&#x27;HELLO&#x27;);<br>输出：hello<br></code></pre></td></tr></table></figure>
+<h5 id="二、视图中的检查选项"><a href="#二、视图中的检查选项" class="headerlink" title="二、视图中的检查选项"></a>二、视图中的检查选项</h5><p>当使用WITH CHECK OPTION子句创建视图时，MySQL会通过视图检查每个正在更改的行，例如插入，更新，删除，已使其符合视图的定义。MySQl允许基于另一个视图创建视图，它会依赖检查视图中的规则以保持一致性。<br><strong>WITH CASCADED CHECK OPTION   检查选项会传递</strong><br>需要满足当前视图的条件。并且对于所有底部视图的条件，也需要一并满足，哪怕底部视图没有定义with check option语句。</p>
+<blockquote>
+<p><em>不指定约束类型时，默认为cascaded约束，with check option &#x3D; with cascaded check option。</em></p>
+</blockquote>
+<p>创建视图 </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or</span> replace <span class="hljs-keyword">view</span> stu_v_1 <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> id, name <span class="hljs-keyword">from</span> student <span class="hljs-keyword">where</span> id <span class="hljs-operator">&gt;=</span> <span class="hljs-number">10</span>;<br></code></pre></td></tr></table></figure>
+<p>执行以下插入语句均不会报错，因为当前视图没有检查选项。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> stu_v_1 <span class="hljs-keyword">values</span>(<span class="hljs-number">8</span>, <span class="hljs-string">&#x27;tom&#x27;</span>);<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> stu_v_1 <span class="hljs-keyword">values</span>(<span class="hljs-number">18</span>, <span class="hljs-string">&#x27;jerry&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<p>重新创建视图，指定约束条件</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or</span> replcae <span class="hljs-keyword">view</span> stu_v_2 <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> id, name <span class="hljs-keyword">from</span> stu_v_1 <span class="hljs-keyword">where</span> id <span class="hljs-operator">&lt;=</span> <span class="hljs-number">20</span> <span class="hljs-keyword">with</span> <span class="hljs-keyword">cascaded</span> <span class="hljs-keyword">check</span> option;<br></code></pre></td></tr></table></figure>
+<p>再次执行以下插入语句，第一条语句会报错，因为stu_v_1要求id&gt;&#x3D;10,但是第二条语句不会报错。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> stu_v_2 <span class="hljs-keyword">values</span>(<span class="hljs-number">8</span>, <span class="hljs-string">&#x27;tom&#x27;</span>);<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> stu_v_2 <span class="hljs-keyword">values</span>(<span class="hljs-number">18</span>, <span class="hljs-string">&#x27;jerry&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<p><strong>WITH LOCAL CHECK OPTION    检查选项不会传递</strong><br>需要满足当前视图的条件。对于底部视图，也是先看是否有指定的with check option语句，有的话对应处理，无则不需要满足底部视图的条件。<br>创建视图 </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or</span> replcae <span class="hljs-keyword">view</span> stu_v_3 <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> id, name <span class="hljs-keyword">from</span> student <span class="hljs-keyword">where</span> id <span class="hljs-operator">&gt;=</span> <span class="hljs-number">10</span>;<br></code></pre></td></tr></table></figure>
+<p>执行以下插入语句均不会报错，因为当前视图没有检查选项。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> stu_v_1 <span class="hljs-keyword">values</span>(<span class="hljs-number">8</span>, <span class="hljs-string">&#x27;tom&#x27;</span>);<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> stu_v_1 <span class="hljs-keyword">values</span>(<span class="hljs-number">18</span>, <span class="hljs-string">&#x27;jerry&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<p>重新创建视图，指定约束条件</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or</span> replcae <span class="hljs-keyword">view</span> stu_v_4 <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> id, name <span class="hljs-keyword">from</span> stu_v_3 <span class="hljs-keyword">where</span> id <span class="hljs-operator">&lt;=</span> <span class="hljs-number">20</span> <span class="hljs-keyword">with</span> <span class="hljs-keyword">local</span> <span class="hljs-keyword">check</span> option;<br></code></pre></td></tr></table></figure>
+<p>再次执行以下插入语句，都不会报错，因为stu_v_3上没有check option校验，它只会校验stu_v_4上的约束满足即可。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> stu_v_2 <span class="hljs-keyword">values</span>(<span class="hljs-number">8</span>, <span class="hljs-string">&#x27;tom&#x27;</span>);<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> stu_v_2 <span class="hljs-keyword">values</span>(<span class="hljs-number">18</span>, <span class="hljs-string">&#x27;jerry&#x27;</span>);<br></code></pre></td></tr></table></figure>
+</br>
 
-<p>3、UPPER函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT UPPER(&#x27;hello&#x27;);<br>输出：HELLO<br></code></pre></td></tr></table></figure>
+<h5 id="三、视图的更新和作用"><a href="#三、视图的更新和作用" class="headerlink" title="三、视图的更新和作用"></a>三、视图的更新和作用</h5><p><strong>视图的更新</strong><br>要使视图可以更新，视图中的行与基础表中的行之间必须存在一一对应的关系。如果视图包含以下任意一项，则该视图不可更新：<br>    1、聚合函数或者窗口函数（SUM(), MIN(), MAX(), COUNT()等）<br>    2、DISTINCT<br>    3、GROUP BY<br>    4、HAVING<br>    5、UNION或者UNION ALL<br><strong>视图的作用</strong><br><em>简单：</em>视图不仅可以简化用户对数据的理解，也可以简化他们的操作。那些经常被使用的查询可以被定义为视图，从而使得用户不必为以后的操作每次都指定全部的条件。<br><em>安全：</em>数据库可以授权，但是不能授权到数据库特定的行和特定的列上。通过视图用户只能查询和修改他们所能见到的数据。<br><em>数据独立：</em>视图可以帮助用户屏蔽真实表结构变化带来的影响。</p>
 
-<p>4、LPAD函数  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT LPAD(&#x27;01&#x27;, 5, &#x27;-&#x27;);<br>输出：---01<br></code></pre></td></tr></table></figure>
-
-<p>5、RPAD函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT RPAD(&#x27;01&#x27;, 5, &#x27;-&#x27;);<br>输出：01---<br></code></pre></td></tr></table></figure>
-
-<p>6、TRIM函数（只能去除两端的空格，不能去除中间的空格）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT TRIM(&#x27; Hello Trim &#x27;);<br>输出：Hello Trim<br></code></pre></td></tr></table></figure>
-
-<p>7、SUBSTRING</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT SUBSTRING(&#x27;Hello MySQL&#x27;, 1, 5);<br>输出：Hello<br></code></pre></td></tr></table></figure>
-
-  </br>
-
-<h4 id="二、数值函数‍‍"><a href="#二、数值函数‍‍" class="headerlink" title="二、数值函数‍‍"></a><strong>二、数值函数</strong>‍‍</h4><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>CEIL(x)</td>
-<td>向上取整</td>
-</tr>
-<tr>
-<td>FLOOR(x)</td>
-<td>向下取整</td>
-</tr>
-<tr>
-<td>MOD(x, y)</td>
-<td>返回x&#x2F;y的模</td>
-</tr>
-<tr>
-<td>RAND()</td>
-<td>返回0～1内的随机数</td>
-</tr>
-<tr>
-<td>ROUND(x, y)</td>
-<td>求参数x的四舍五入的值，保留y位小数</td>
-</tr>
-</tbody></table>
-<p>1、CEIL函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT CEIL(1.6);    <br>输出：1<br><br>SELECT CEIL(1.1);    <br>输出：1<br></code></pre></td></tr></table></figure>
-
-<p>2、FLOOR函数</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT FLOOR(1.6);    <br>输出：2<br><br>SELECT FLOOR(1.1);   <br>输出：2<br></code></pre></td></tr></table></figure>
-
-<p>3、MOD函数(求余数)  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT MOD(3, 4);   <br>输出：3<br><br>SELECT MOD(6, 4);    <br>输出：2<br></code></pre></td></tr></table></figure>
-
-<p>4、RAND  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT RAND();       <br>输出：0～1之间的随机数<br></code></pre></td></tr></table></figure>
-
-<p>5、ROUND‍</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT ROUND(2.34, 2);     <br>输出：2.34<br><br>SELECT ROUND(1.236, 2);    <br>输出：1.24<br></code></pre></td></tr></table></figure>
-
-  </br>
-
-<h4 id="三、日期函数‍‍‍‍"><a href="#三、日期函数‍‍‍‍" class="headerlink" title="三、日期函数‍‍‍‍"></a><strong>三、日期函数</strong>‍‍‍‍</h4><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>CURDATE()</td>
-<td>返回当前日期</td>
-</tr>
-<tr>
-<td>CURTIME()</td>
-<td>返回当前时间</td>
-</tr>
-<tr>
-<td>NOW()</td>
-<td>返回当前日期和时间</td>
-</tr>
-<tr>
-<td>YEAR(date)</td>
-<td>返回执行date的年份</td>
-</tr>
-<tr>
-<td>MONTH(date)</td>
-<td>返回指定date的月份</td>
-</tr>
-<tr>
-<td>DAY(date)</td>
-<td>返回指定date的日期</td>
-</tr>
-<tr>
-<td>DATE_ADD(date, INTERVAL expr type)</td>
-<td>返回一个日期&#x2F;时间加上一个时间间隔expr后的时间值</td>
-</tr>
-<tr>
-<td>DATEDIFF(date1, date2)</td>
-<td>返回起始时间date1和结束时间date2之间的天数</td>
-</tr>
-</tbody></table>
-<p>1、CURDATE</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT CURDATE();    <br>输出：2023-07-13<br></code></pre></td></tr></table></figure>
-
-<p>2、CURTIME</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT CURTIME();    <br>输出：08:37:26<br></code></pre></td></tr></table></figure>
-
-<p>3、NOW</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT NOW();        <br>输出：2023-07-13 08:38:33<br></code></pre></td></tr></table></figure>
-
-<p>4、YEAR、MONTH、DAY</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT YEAR(NOW());      <br>输出：2023<br><br>SELECT YEAR(MONTH());    <br>输出：7<br><br>SELECT YEAR(DAY());      <br>输出：13<br></code></pre></td></tr></table></figure>
-
-<p>5、DATE_ADD</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT DATE_ADD(NOW(), INTERVAL 70 DAY);<br>输出：2023-09-21 08:40:13<br><br>SELECT DATE_ADD(NOW(), INTERVAL -10 MONTH);<br>输出：2022-09-13 08:40:13<br></code></pre></td></tr></table></figure>
-
-<p>6、DATEDIFF(第一个时间减第二个时间)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT DATEDIFF(&#x27;2023-07-10&#x27;, &#x27;2023-07-01&#x27;);<br>输出：9<br></code></pre></td></tr></table></figure>
-
-  </br>
-
-<h4 id="四、流程控制函数‍‍"><a href="#四、流程控制函数‍‍" class="headerlink" title="四、流程控制函数‍‍"></a><strong>四、流程控制函数</strong>‍‍</h4><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>IF(value, t, f)</td>
-<td>如果value为true则返回t，否则返回f。</td>
-</tr>
-<tr>
-<td>IFNULL(val1, val2)</td>
-<td>如果val1不为空则返回val1，否则返回val2。</td>
-</tr>
-<tr>
-<td>CASE WHEN [val1] THEN [res1] … ELSE [default] END</td>
-<td>如果val1为true则返回res1…否则返回默认值default。</td>
-</tr>
-<tr>
-<td>CASE [expr] WHEN [val1] THEN [res1] … ELSE [default] END</td>
-<td>如果表达式expr的值为val1则返回res1…否则返回默认值default。</td>
-</tr>
-</tbody></table>
-<p>1、IF</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT IF(true, &#x27;OK&#x27;, &#x27;Error&#x27;);    <br>输出：OK<br></code></pre></td></tr></table></figure>
-
-<p>2、IFNULL‍</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">SELECT IFNULL(&#x27;OK&#x27;, &#x27;Default&#x27;);    <br>输出：OK<br><br>SELECT IFNULL(&#x27;&#x27;, &#x27;Default&#x27;);      <br>输出：<br><br>SELECT IFNULL(NULL, &#x27;Default&#x27;);    <br>输出：Default<br></code></pre></td></tr></table></figure>
-
-<p>3、CASE WHEN THEN ELSE END</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">查询员工姓名和城市，如果城市是上海和北京返回一线城市，其他返回二线城市<br><br>SELECT <br>	name, <br>	CASE work_address WHEN &#x27;上海&#x27; THEN &#x27;一线&#x27; WHEN &#x27;北京&#x27; THEN &#x27;一线&#x27; ELSE &#x27;二线&#x27; END <br>FROM worker;<br></code></pre></td></tr></table></figure>
             </div>
 
             
@@ -437,16 +272,16 @@
 <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li class="post-title">
-            <span class="type">本文标题</span>：<span class="content">MySQL学习 ｜ 六、SQL语言中函数</span>
+            <span class="type">本文标题</span>：<span class="content">MySQL学习 ｜ 十四、SQL中的视图</span>
         </li>
         <li class="post-author">
             <span class="type">本文作者</span>：<span class="content">何进磊</span>
         </li>
         <li class="post-time">
-            <span class="type">创建时间</span>：<span class="content">2023-08-01 21:03:24</span>
+            <span class="type">创建时间</span>：<span class="content">2023-08-28 08:31:38</span>
         </li>
         <li class="post-link">
-            <span class="type">本文链接</span>：<span class="content">2023/08/01/MySQL学习 ｜ 六、SQL语言中函数/</span>
+            <span class="type">本文链接</span>：<span class="content">2023/08/28/MySQL学习 ｜ 十四、SQL中的视图/</span>
         </li>
         <li class="post-license">
             <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
@@ -477,29 +312,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/08/01/MySQL%E5%AD%A6%E4%B9%A0%20%EF%BD%9C%20%E4%B8%83%E3%80%81SQL%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E7%BA%A6%E6%9D%9F/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">MySQL学习 ｜ 七、SQL语言中的约束</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/07/28/MySQL%E5%AD%A6%E4%B9%A0%20%EF%BD%9C%20%E4%BA%94%E3%80%81SQL%E8%AF%AD%E8%A8%80%E4%B8%ADDCL%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%AF%AD%E6%B3%95/"
+                               href="/2023/08/25/MySQL%E5%AD%A6%E4%B9%A0%20%EF%BD%9C%20%E5%8D%81%E4%B8%89%E3%80%81SQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">MySQL学习 ｜ 五、SQL语言中DCL语句的语法</span>
+                                <span class="post-nav-title-item">MySQL学习 ｜ 十三、SQL性能优化</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
