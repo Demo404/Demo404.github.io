@@ -191,7 +191,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-09-27 18:03:09</span>
+        <span class="pc">2023-11-09 12:19:01</span>
     </span>
     
     
@@ -274,7 +274,7 @@
 <p><strong>Temporary Tablespace：</strong>InnoDB使用回话临时表空间和全局临时表空间，存储用户创建的临时表等数据。</p>
 <p><strong>Doublewrite Buffer File：</strong>双写缓冲区，InnoDB引擎将数据也从Buffer Pool刷新到磁盘前，先将数据页写入到双写缓冲区文件中，便于系统异常时恢复数据。</p>
 <p>相关文件：#ib_xxxxx_0.dblwr、#ib_xxxxx_1.dblwr</p>
-<p><strong>Redo Log：</strong>重做日志，用来实现事物的持久性。改日志文件由两部分组成：重做日志缓冲（redo log buffer）以及重做日志文件（redo log），前者是在内存中，后者在磁盘中。当事物提交之后会把所有的修改信息都存储在该日志中，用于在刷新脏页到磁盘时发生错误后恢复数据使用。</p>
+<p><strong>Redo Log：</strong>重做日志，用来实现事物的持久性。该日志文件由两部分组成：重做日志缓冲（redo log buffer）以及重做日志文件（redo log），前者是在内存中，后者在磁盘中。当事物提交之后会把所有的修改信息都存储在该日志中，用于在刷新脏页到磁盘时发生错误后恢复数据使用。</p>
 <p>以循环方式写入重做日志文件，涉及两个文件：ib_logfile0、ib_logfile_1</p>
 <h5 id="3、后台线程"><a href="#3、后台线程" class="headerlink" title="3、后台线程"></a>3、后台线程</h5><ol>
 <li><p><strong>Master Thread：</strong>核心后台进程，负责调度其他线程，还负责异步将缓冲池中的数据刷新到磁盘中，保持数据的一致性，还包括脏页的刷新、合并插入缓存、undo页的回收。</p>
